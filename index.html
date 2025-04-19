@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic Tac Toe</title>
+  <!-- Link to Bootstrap CSS for styling -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+  <!-- Link to Bootstrap JavaScript for interactive components -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+  <style>   
+    /* Styling for each cell in the board */
+    .cell {
+      width: 100px;
+      height: 100px;
+      display: flex;
+      align-items: center; /* Center content vertically */
+      justify-content: center; /* Center content horizontally */
+      font-size: 24px; /* Font size for 'X' or 'O' */
+      border: 2px solid black; /* Border around each cell */
+      cursor: pointer; /* Change cursor to pointer on hover */
+    }
+    /* Disable pointer events for cells that are already filled */
+    .cell.disabled {
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body class="text-center">
+  <!-- Container for the game title -->
+  <div class="container mt-3">
+    <h1 class="text-primary">Tic Tac Toe</h1> <!-- Main title of the game -->
+  </div>
+
+  <!-- Row for player information -->
+  <div class="row justify-content-center mt-3">
+    <div class="col m-2 fs-1 text-danger">Player 1: X</div> <!-- Display for Player 1 -->
+    <div class="col m-2"></div> <!-- Empty column for spacing -->
+    <div class="col m-2 fs-1 text-info">Player 2: O</div> <!-- Display for Player 2 -->
+  </div>
+
+  <!-- Row for the current player display -->
+  <div class="row justify-content-center mt-3">
+    <div class="col m-2 fs-2">
+      <span id="currentPlayer" class="fw-bold"></span> <!-- Placeholder for the current player's turn -->
+    </div>
+  </div>
+
+  <!-- Game board container -->
+  <div class="d-grid gap-2 justify-content-center mt-5" id="board" style="grid-template-columns: repeat(3, 100px);"> 
+    <!-- The game board where cells will be dynamically rendered -->
+  </div>
+
+  <!-- Winner display container -->
+  <div class="winner mt-3" id="winner"></div> <!-- Placeholder for the winner or draw message -->
+
+  <!-- Reset button container -->
+  <div class="container mt-3">
+    <button class="btn btn-primary" id="reset">Reset Game</button> <!-- Button to reset the game -->
+  </div>
+
+  <!-- Link to the JavaScript file -->
+  <script src="script.js"></script> <!-- External JavaScript file for game logic -->
+</body>
+</html>
